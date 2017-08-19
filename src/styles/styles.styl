@@ -1,0 +1,629 @@
+@charset "UTF-8"
+@import "nib"
+
+* 
+    box-sizing border-box
+
+body 
+    color #333
+    font-size 18px 
+    font-family 'Tahoma', sans-serif 
+    background-color #ccc
+
+
+// BANNER ANIMATION
+.main-grid
+	top 50%
+	left 50%
+	width 920px
+	position absolute
+	text-align center
+	transform translate(-50%,-50%)
+
+.main-grid-wrapper
+	width 920px
+	height 460px
+	margin-bottom 30px
+	background #565656
+
+.main-grid-btn
+	color #666
+	font-size 17px
+	padding 10px 30px
+	cursor pointer
+	display inline-block
+	border 1px solid #666
+	text-transform uppercase
+	transition all 0.25s ease-in-out
+	&:hover 
+		background #666
+		color #fff
+
+.main-grid-wrapper-block
+	float left
+	width 115px
+	height 115px
+	position relative
+	transition visibility 150ms ease
+	visibility hidden
+	cursor pointer
+	backface-visibility hidden
+	-webkit-transform-style preserve-3d
+    -webkit-transform rotateX(0deg) rotateY(0deg) translateZ(0) scale(1)
+
+	span
+		display block
+
+
+.main-grid-inative
+	.main-grid-wrapper-block
+		visibility visible
+
+
+// REUSABLE SQUARE CLASSES
+plus-sign()
+	background-color #41a6ab
+
+square-full()
+	background-color #41a6ab
+
+
+square-white()
+	background-color #fff
+
+triangle-topright()
+	span
+		width 0
+		height 0
+		border-top 115px solid #41a6ab
+		border-left 115px solid #565656
+
+triangle-downright()
+	span
+		width 0
+		height 0
+		border-bottom 115px solid #41a6ab
+		border-left 115px solid #565656
+
+triangle-downleft()
+	span
+		width 0
+		height 0
+		border-bottom 115px solid #41a6ab
+		border-right 115px solid #565656
+
+triangle-topleft()
+	span
+		width 0
+		height 0
+		border-top 115px solid #41a6ab
+		border-right 115px solid #565656
+
+// ANIMATION 1
+.main-anima1
+	#grid_block_1_0,
+	#grid_block_1_4,
+	#grid_block_3_0,
+	#grid_block_3_4
+		triangle-downright()
+
+	#grid_block_1_1,
+	#grid_block_1_5,
+	#grid_block_2_2,
+	#grid_block_2_6,
+	#grid_block_3_1,
+	#grid_block_3_5,
+	#grid_block_4_2,
+	#grid_block_4_6
+		square-full()
+
+	#grid_block_1_2,
+	#grid_block_1_6,
+	#grid_block_3_2,
+	#grid_block_3_6
+		triangle-downleft()
+
+	#grid_block_2_1,
+	#grid_block_2_5,
+	#grid_block_4_1,
+	#grid_block_4_5
+		triangle-topright()
+
+	#grid_block_2_3,
+	#grid_block_2_7,
+	#grid_block_4_3,
+	#grid_block_4_7
+		triangle-topleft()
+
+	// TIMINGS ANIMA 1
+	#grid_block_4_7
+		transition-delay 0.1s
+
+	#grid_block_2_2,
+	#grid_block_2_6,
+	#grid_block_4_2,
+	#grid_block_4_6
+		transition-delay 0.15s
+
+	#grid_block_1_0,
+	#grid_block_2_1
+		transition-delay 0.2s
+
+	#grid_block_1_5,
+	#grid_block_1_2,
+	#grid_block_3_5
+		transition-delay 0.25s
+
+	#grid_block_1_1,
+	#grid_block_2_3,
+	#grid_block_3_4,
+	#grid_block_4_5
+		transition-delay 0.3s
+
+	#grid_block_3_1
+		transition-delay 0.35s
+
+	#grid_block_4_1,
+	#grid_block_3_6
+		transition-delay 0.4s
+
+	#grid_block_2_7
+		transition-delay 0.45s
+
+	#grid_block_1_4
+		transition-delay 0.5s
+
+	#grid_block_3_2
+		transition-delay 0.55s
+
+	#grid_block_2_5
+		transition-delay 0.58s
+
+	#grid_block_3_0
+		transition-delay 0.61s
+
+// ANIMATION 1 OUT
+.main-anima1-out
+	#grid_block_2_3,
+	#grid_block_3_6
+		transition-delay 0s
+
+	#grid_block_4_5
+		transition-delay 0.1s
+
+	#grid_block_1_0,
+	#grid_block_2_7,
+	#grid_block_4_2,
+	#grid_block_3_5,
+	#grid_block_4_7
+		transition-delay 0.15s
+
+	#grid_block_4_6,
+	#grid_block_1_1,
+	#grid_block_2_6
+		transition-delay 0.2s
+
+	#grid_block_2_2,
+	#grid_block_3_1,
+	#grid_block_3_2,
+	#grid_block_4_1,
+	#grid_block_3_4
+		transition-delay 0.25s
+
+	#grid_block_1_2
+		transition-delay 0.28s
+
+	#grid_block_1_6
+		transition-delay 0.3s
+
+	#grid_block_2_1,
+	#grid_block_3_0
+		transition-delay 0.35s
+
+	#grid_block_4_3,
+	#grid_block_2_5
+		transition-delay 0.38s
+
+	#grid_block_1_4
+		transition-delay 0.4s
+
+	#grid_block_1_5
+		transition-delay 0.45s
+
+	.main-grid-wrapper-block
+		visibility hidden !important
+
+
+
+
+
+
+
+
+// ANIMATION 2
+.main-anima2
+
+	#grid_block_1_1,
+	#grid_block_1_2,
+	#grid_block_1_3,
+	#grid_block_2_0,
+	#grid_block_3_4
+		triangle-downright()
+
+	#grid_block_1_4,
+	#grid_block_2_5
+		triangle-downleft()
+
+	#grid_block_2_1,
+	#grid_block_2_2,
+	#grid_block_2_3,
+	#grid_block_2_4,
+	#grid_block_3_3,
+	#grid_block_3_5,
+	#grid_block_3_6,
+	#grid_block_4_5
+		square-full()
+
+	#grid_block_3_2,
+	#grid_block_4_3,
+	#grid_block_4_4
+		triangle-topright()
+
+	#grid_block_3_7,
+	#grid_block_4_6
+		triangle-topleft()
+
+	#grid_block_2_3
+		plus-sign()
+
+
+	// TIMINGS ANIMA 2
+	#grid_block_1_2,
+	#grid_block_3_5
+		transition-delay 0s
+
+	#grid_block_4_5
+		transition-delay 0.05s
+
+	#grid_block_2_0,
+	#grid_block_2_3,
+	#grid_block_1_3
+		transition-delay 0.1s
+
+	#grid_block_3_3
+		transition-delay 0.15s
+
+	#grid_block_4_4,
+	#grid_block_3_7
+		transition-delay 0.2s
+
+	#grid_block_3_4,
+	#grid_block_4_3
+		transition-delay 0.22s
+
+	#grid_block_2_5
+		transition-delay 0.28s
+
+	#grid_block_2_1
+		transition-delay 0.3s
+
+	#grid_block_2_4
+		transition-delay 0.34s
+
+	#grid_block_4_6
+		transition-delay 0.39s
+
+	#grid_block_1_1
+		transition-delay 0.42s
+
+	#grid_block_2_2,
+	#grid_block_3_6
+		transition-delay 0.46s
+
+	#grid_block_1_4
+		transition-delay 0.5s
+
+	#grid_block_3_2
+		transition-delay 0.55s
+
+
+
+
+
+
+
+
+
+// ANIMATION 3
+.main-anima3
+	#grid_block_2_4,
+	#grid_block_2_6,
+	#grid_block_2_7
+		triangle-downright()
+
+	#grid_block_2_5,
+	#grid_block_3_6
+		square-full()
+
+	#grid_block_3_5,
+	#grid_block_3_7
+		triangle-topright()
+
+	#grid_block_3_6
+		plus-sign()
+
+	// TIMINGS ANIMA 3
+	#grid_block_2_7
+		transition-delay 0s
+
+	#grid_block_2_4,
+	#grid_block_3_5
+		transition-delay 0.1s
+
+	#grid_block_2_6
+		transition-delay 0.2s
+
+	#grid_block_3_7
+		transition-delay 0.25s
+
+	#grid_block_3_6
+		transition-delay 0.3s
+
+	#grid_block_2_5
+		transition-delay 0.38s
+
+
+
+
+
+
+
+// ANIMATION 4
+.main-anima4
+	#grid_block_2_3,
+	#grid_block_3_6,
+	#grid_block_3_7
+		triangle-topright()
+
+	#grid_block_2_4,
+	#grid_block_2_5,
+	#grid_block_2_7
+		triangle-downright()
+
+	#grid_block_2_6
+		square-full()
+		plus-sign()
+
+	// TIMINGS ANIMA 4
+	#grid_block_2_4
+		transition-delay 0s
+
+	#grid_block_2_3
+		transition-delay 0.1s
+
+	#grid_block_3_7
+		transition-delay 0.2s
+
+	#grid_block_2_5,
+	#grid_block_2_6
+		transition-delay 0.3s
+
+	#grid_block_3_6
+		transition-delay 0.4s
+
+	#grid_block_2_7
+		transition-delay 0.45s
+
+
+
+
+
+
+// ANIMATION 5
+.main-anima5
+	#grid_block_1_0,
+	#grid_block_2_2,
+	#grid_block_2_3
+		triangle-downright()
+
+	#grid_block_1_1,
+	#grid_block_3_2
+		square-full()
+
+	#grid_block_2_1,
+	#grid_block_3_3
+		triangle-topright()
+
+	#grid_block_3_2
+		plus-sign()
+
+	// TIMINGS ANIMA 5
+	#grid_block_2_2
+		transition-delay 0s
+
+	#grid_block_3_2
+		transition-delay 0.1s
+
+	#grid_block_2_3
+		transition-delay 0.2s
+
+	#grid_block_1_0
+		transition-delay 0.25s
+
+	#grid_block_3_3
+		transition-delay 0.3s
+
+	#grid_block_2_1
+		transition-delay 0.35s
+
+	#grid_block_1_1
+		transition-delay 0.4s
+
+
+
+
+
+
+
+// ANIMATION 6
+.main-anima6
+	#grid_block_2_2,
+	#grid_block_3_5,
+	#grid_block_4_6,
+	#grid_block_4_7
+		triangle-topright()
+
+	#grid_block_2_3,
+	#grid_block_2_4,
+	#grid_block_3_7
+		triangle-downright()
+
+	#grid_block_2_5,
+	#grid_block_3_6
+		square-full()
+
+	#grid_block_2_6
+		triangle-downleft()
+
+	#grid_block_2_5
+		plus-sign()
+
+	// TIMINGS ANIMA 6
+	#grid_block_2_6
+		transition-delay 0
+
+	#grid_block_3_6,
+	#grid_block_2_3
+		transition-delay 0.1s
+
+	#grid_block_2_4
+		transition-delay 0.2s
+
+	#grid_block_4_7
+		transition-delay 0.25s
+
+	#grid_block_2_5,
+	#grid_block_3_5
+		transition-delay 0.3s
+
+	#grid_block_3_7,
+	#grid_block_4_6,
+	#grid_block_2_2
+		transition-delay 0.35s
+
+
+
+
+
+
+
+
+
+
+
+
+// ANIMATION 7
+.main-anima7
+	#grid_block_2_5,
+	#grid_block_3_7
+		triangle-topright()
+
+	#grid_block_2_6,
+	#grid_block_2_7
+		triangle-downright()
+
+	#grid_block_3_6
+		square-full()
+		plus-sign()
+
+	// TIMINGS ANIMA 7
+	#grid_block_2_5
+		transition-delay 0
+
+	#grid_block_2_6,
+	#grid_block_3_6
+		transition-delay 0.1s
+
+	#grid_block_2_7
+		transition-delay 0.2s
+
+	#grid_block_3_7
+		transition-delay 0.28s
+
+
+
+
+
+
+// cal animation
+.animate-block-in
+	.main-grid-wrapper-block
+		visibility visible
+
+
+
+
+// CLASSES FOR JS
+.plus-sign
+	background-color #41a6ab
+
+
+.square-full
+	background-color #41a6ab !important
+	transition-delay 0 !important
+
+.square-white,
+.triangle-topright,
+.triangle-downright,
+.triangle-downleft,
+.triangle-topleft 
+	background-color #fff !important
+	transition-delay 0 !important
+
+.square-full,
+.square-white
+	span
+		display none
+
+.triangle-topright,
+.triangle-downright,
+.triangle-downleft,
+.triangle-topleft
+	span:before
+		display none !important
+
+.triangle-topright
+	span
+		width 0
+		height 0
+		border-top 115px solid #41a6ab
+		border-left 115px solid #565656
+		border-bottom none !important
+		border-right none !important
+
+.triangle-downright
+	span
+		width 0
+		height 0
+		border-bottom 115px solid #41a6ab
+		border-left 115px solid #565656
+		border-top none !important
+		border-right none !important
+
+.triangle-downleft
+	span
+		width 0
+		height 0
+		border-bottom 115px solid #41a6ab
+		border-right 115px solid #565656
+		border-top none !important
+		border-left none !important
+
+.triangle-topleft
+	span
+		width 0
+		height 0
+		border-top 115px solid #41a6ab
+		border-right 115px solid #565656
+		border-bottom none !important
+		border-left none !important
